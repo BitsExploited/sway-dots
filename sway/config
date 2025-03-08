@@ -7,7 +7,8 @@
 gaps inner 8px
 gaps outer 8px
 
-hide_edge_borders --i3 smart_no_gaps
+default_border none
+
 ### Variables
 
 input "type:pointer" accel_profile flat
