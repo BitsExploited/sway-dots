@@ -8,10 +8,9 @@ window#waybar {
     color: #D8DEE9; /* Snow Storm for text outside modules */
     border-radius: 9px; /* Rounded corners for floating effect */
     margin: 12px 100px; /* Increased top margin to 12px for more lift */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Added shadow for floating effect */
 }
 
-/* Base floating module styling */
+/* Base floating module styling - Set default text color to #2E3440 */
 #window,
 #custom-media,
 #mpd,
@@ -29,14 +28,16 @@ window#waybar {
 #battery#bat2,
 #clock,
 #tray,
-#custom-power {
+#custom-power 
+{
     background-color: #81A1C1; /* Frost blue for module background */
-    color: #2E3440; /* Polar Night for text (good contrast with Frost blue) */
+    color: #2E3440; /* Polar Night for text (consistent across modules) */
     border-radius: 3px;
-    padding: 0 12px;
-    margin: 4px 4px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for floating effect */
-}
+    border: solid 3px;
+    border-color: #2E3440;
+    padding: 2px 12px;
+    margin: 8px 4px;
+} 
 
 /* Workspaces container (transparent, no background) */
 #workspaces {
@@ -44,35 +45,36 @@ window#waybar {
     border: none; /* No border for the container */
     box-shadow: none; /* No shadow for the container */
     padding: 0; /* Remove padding to avoid extra space */
-    margin: 4px 4px; /* Keep margin for spacing within the bar */
+    margin: 8px 4px; /* Keep margin for spacing within the bar */
 }
 
 /* Workspaces buttons (apply background only to numbers/icons) */
 #workspaces button {
     padding: 0 8px;
+    border: solid 3px;
+    border-color: #2E3440;
     background-color: #81A1C1; /* Frost blue for workspace buttons */
     color: #2E3440; /* Polar Night for text */
     border-radius: 3px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for floating effect */
     margin: 0 2px; /* Small margin between buttons for spacing */
 }
 
 #workspaces button:hover {
     background: #5E81AC; /* Darker Frost blue for hover */
-    color: #BF616A; /* Aurora Red for text */
+    color: #2E3440; /* Polar Night for text */
 }
 
 #workspaces button.focused, #workspaces button.active { /* Support both Sway (focused) and Hyprland (active) */
     background-color: #5E81AC; /* Darker Frost blue for focused/active */
-    color: #BF616A; /* Aurora Red for text */
+    color: #BF616A; /* Polar Night for text */
 }
 
 #workspaces button.urgent {
     background-color: #BF616A; /* Aurora Red for urgent */
-    color: #ECEFF4; /* Brightest Snow Storm for text */
+    color: #ECEFF4; /* Brightest Snow Storm for text (contrast for visibility) */
 }
 
-/* Specific module states */
+/* Specific module states - Ensure text color is #2E3440 where possible */
 #battery.charging, #battery.plugged {
     color: #2E3440; /* Polar Night for text */
     background-color: #A3BE8C; /* Aurora Green for charging/plugged */
@@ -80,7 +82,7 @@ window#waybar {
 
 #battery.critical:not(.charging) {
     background-color: #BF616A; /* Aurora Red for critical */
-    color: #ECEFF4; /* Brightest Snow Storm for text */
+    color: #2E3440; /* Polar Night for text */
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -90,32 +92,32 @@ window#waybar {
 
 #temperature.critical {
     background-color: #BF616A; /* Aurora Red for critical */
-    color: #ECEFF4; /* Brightest Snow Storm for text */
+    color: #2E3440; /* Polar Night for text */
 }
 
 #network.disconnected {
     background-color: #BF616A; /* Aurora Red for disconnected */
-    color: #ECEFF4; /* Brightest Snow Storm for text */
+    color: #2E3440; /* Polar Night for text */
 }
 
 #pulseaudio.muted {
     background-color: #4C566A; /* Darkest Polar Night for muted */
-    color: #D8DEE9; /* Snow Storm for text */
+    color: #2E3440; /* Polar Night for text */
 }
 
 #mpd.disconnected {
     background-color: #BF616A; /* Aurora Red for disconnected */
-    color: #ECEFF4; /* Brightest Snow Storm for text */
+    color: #2E3440; /* Polar Night for text */
 }
 
 #mpd.stopped {
     background-color: #4C566A; /* Darkest Polar Night for stopped */
-    color: #D8DEE9; /* Snow Storm for text */
+    color: #2E3440; /* Polar Night for text */
 }
 
 #mpd.paused {
     background-color: #5E81AC; /* Darker Frost blue for paused */
-    color: #ECEFF4; /* Brightest Snow Storm for text */
+    color: #2E3440; /* Polar Night for text */
 }
 
 #idle_inhibitor.activated {
@@ -125,7 +127,7 @@ window#waybar {
 
 #power-profiles-daemon.performance {
     background-color: #BF616A; /* Aurora Red for performance */
-    color: #ECEFF4; /* Brightest Snow Storm for text */
+    color: #2E3440; /* Polar Night for text */
 }
 
 #power-profiles-daemon.balanced {
