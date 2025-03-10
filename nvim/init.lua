@@ -1,3 +1,8 @@
+-- Enable hybrid line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.cursorline = true  -- Optional: Highlight the current line for better visibility
+
 vim.cmd("set expandtab")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
